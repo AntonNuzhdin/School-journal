@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, minimum-scale=0.7">
+
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/static/bootstrap.css">
+    <link rel="stylesheet" href="/static/personal.css">
+    <title>Personal_page</title>
+  </head>
+  <style>
+  body{
+    background: #e9e9e9;
+    background-attachment: fixed;
+    background-size: 100% auto;
+  }
+  .sign{
+    opacity: 0.7;
+    margin-left: 90%;
+
+  }
+  </style>
+<body>
+  <nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+      <img src="{{url_for('static', filename='imgs/LOGO.png')}}" width="40" height="45" class="d-inline-block align-top" alt="">
+      Личный Кабинет
+    </a>
+
+  </nav>
+
+  <ul class="list-group col-xs-12 col-lg-10 offset-lg-1">
+    <center><h5 style="color: red">Вы можете выбрать профиль до 13 мая 23:59 по мск!</h5></center>
+
+    <center><small>Осталось времени на выбор профиля:</small></center>
+
+<script src="//megatimer.ru/get/47f675e3f9850d60e10e2236135862bb.js"></script>
+    <li class="list-group-item"><h3>{{ nickname }}</h3></li>
+    <li class="list-group-item"><h6>Вы пока не выбрали профиль, на который хотите поступать</h6> <button type="button" onclick="location.href='/welcome';" class="btn col-lg-2 offset-lg-5 col-xs-12 btn-secondary">Выбрать</button>
+</li>
+
+  </ul>
+  <div class=" info" >
+
+
+  <h5 class='site'> 2020 © Школа №1502 "Энергия" </h5>
+  <h6 class="inform">
+    <br>Ваша территория: {{stu_ter}}
+
+  <br>Если остались вопросы, адрес электронной почты :
+  help@stu.1502.moscow<br>
+
+  <img class="sign" src="{{url_for('static', filename='imgs/sign3.pdf')}}" width="150" height="150" class="d-inline-block align-top" alt="">
+  </div>
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    </body>
+
+    </html>

@@ -1,0 +1,47 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, minimum-scale=0.7">
+
+    <meta charset="utf-8">
+    <link rel="icon" href="/static/imgs/favicon.ico">
+    <link rel="stylesheet" href="/static/bootstrap.css">
+    <link rel="stylesheet" href="/static/home_.css">
+    <title>Log in</title>
+  </head>
+  <style>
+  body{
+
+
+  background-color: #e9e9e9;
+  background-size: 100%;
+
+  }
+  </style>
+<body class="text-center">
+  <form method="POST" class="form-signin col-lg-3  col-xs-7">
+
+    <img class="mb-4" src="{{url_for('static', filename='imgs/LOGO_HOME.png')}}" alt="" width="300" height="413">
+
+    <h1 class="h3 mb-3 font-weight-normal">Войдите в систему</h1>
+    <label for="inputEmail" class="sr-only">Email address</label>
+    <input type="email" id="inputEmail" name="login" class="form-control" placeholder="Email address" required autofocus>
+    <label for="inputPassword" class="sr-only">Password</label>
+    <input type="password" id="inputPassword" name='pw' class="form-control" placeholder="Password" required>
+
+        </div>
+
+        <button class="button-hola btn btn-lg btn-primary btn-block" id='body_button' type="submit"> <span>Войти</span></button>
+<h6 style="color: red">{{incorrect}}<h6>
+      </form>
+
+
+
+
+
+    </body>
+
+    </html>

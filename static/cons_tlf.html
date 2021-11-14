@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, minimum-scale=0.7">
+
+    <link rel="stylesheet" href="/static/bootstrap.css">
+    <link rel="stylesheet" href="#">
+    <title>Thanks</title>
+
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    </head>
+
+
+  <style media="screen">
+   #other_but{
+     margin-top: 4px;
+     background-color: gray;
+   }
+  .container{
+    max-width: 100%;
+    max-height: 100%;
+    width: 70%;
+    height: 80%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+  }
+  #cont{
+    max-width: 100%;
+    max-height: 100%;
+    border: 1px solid gray;
+    padding: 2%;
+    box-shadow: 0 0 80px rgba(0,0,0,0.5); /* Параметры тени */
+
+  }
+    .form-control{
+      max-width: 100%;
+      text-align: center;
+      background-color: #FFFAFA			; /* Цвет фона */
+
+    }
+
+    h6{
+      text-align: left;
+    }
+  </style>
+<style media="screen">
+
+</style>
+<body class="text-center">
+<div id="cont" class="container">
+  <form method="POST"  >
+
+
+  <div class="form-group">
+  <h6>Время возникновения случая</h6>
+    <input name="time_of_action" class="form-control" id="time_of_action">
+  </div>
+  <h6>Место в распорядке дня</h6>
+    <select class="form-control" name='in_table'>
+  <option>Урок</option>
+  <option>Перемена</option>
+  <option>Прогулка</option>
+  <option>Внутреннее мероприятие</option>
+  <option>Выездное мероприятие</option>
+  <option>Прием пищи</option>
+  </select>
+  <h6>Где произошло?</h6>
+    <select class="form-control" name='place'>
+  <option>Учебный кабинет</option>
+  <option>Коридор</option>
+  <option>Лестница</option>
+  <option>Столовая</option>
+  <option>Спортивный зал</option>
+  <option>Улица</option>
+  <option>После уроков</option>
+
+  </select>
+  <div class="form-group">
+    <h6>ФИО ответственного за обучающегося, должность или дежурного учителя</h6>
+    <input name="fio_teacher" class="form-control" id="time_of_action">
+  </div>
+  <div class="form-group">
+  <h6>ФИО учащегося</h6>
+    <input name="fio_student" class="form-control" id="time_of_action">
+  </div>
+  <h6>Пол</h6>
+    <select class="form-control" name='sex'>
+  <option>М</option>
+  <option>Ж</option>
+  </select>
+
+  <div class="form-group" >
+  <h6>Дата рождения учащегося</h6>
+    <input type="date" class="form-control" id="date" name="date" placeholder="Дата" required>
+  </div>
+  <h6>Класс учащегося</h6>
+<select class="form-control" name='class'>
+
+  {%for i in classes%}
+    <option>{{i}}</option>
+  {%endfor%}
+</select>
+
+  <h6>На что пожаловался учащийся?</h6>
+    <select class="form-control" name='pain'>
+  <option>Голованя боль</option>
+  <option>Боль в животе</option>
+  <option>Плохое самочувствие</option>
+  <option>ОРВИ</option>
+  <option>Повышенное давление</option>
+  <option>Пониженное давление</option>
+  <option>Другое</option>
+  </select>
+  <p>
+  <button id="other_but"class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    *Другое
+  </button>
+</p>
+<div class="collapse" id="collapseExample">
+  <div class="card card-body">
+    <div class="form-group">
+      <input name="other" class="form-control" id="other">
+    </div>  </div>
+</div>
+  <h6>Сообщено родителям?</h6>
+    <select class="form-control" name='message_parent'>
+  <option>Да</option>
+  <option>Нет</option>
+</select>
+<div class="form-group">
+<h6>Предварительный диагноз</h6>
+  <input name="illness" class="form-control" id="illness">
+</div>
+<div class="form-group">
+<h6>Наряд</h6>
+  <input name="Nariad" class="form-control" id="Nariad">
+</div>
+<h6>Есть ли видеонаблюдение?</h6>
+  <select  class="form-control" name='video_nab' >
+<option>Да</option>
+<option>Нет</option>
+</select>
+<div class="form-group">
+  <h6>Кто передал информацию</h6>
+  <input name="kto_peredal" class="form-control" id="Nariad">
+</div>
+<button type="submit" class="btn btn-primary">Отправить</button>
+</div>
+
+</form>
+
+<script type="text/javascript">
+
+$(function(){
+ $('#date').daterangepicker({
+ singleDatePicker: true,
+ locale: {
+ format: 'DD.MM.YYYY'
+ }
+ });
+});
+</script>
+    </body>
+    <!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    </html>

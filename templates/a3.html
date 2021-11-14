@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<meta charset="utf-8">
+<head>
+    <style>
+        body,html  {height: 100%}
+    </style>
+    <link rel="stylesheet" href="{{url_for('static', filename = 'jqwidgets/styles/jqx.base.css')}}"  type="text/css"/>
+    <script type="text/javascript" src="{{url_for('static', filename = 'jqwidgets/jqxcore.js')}}"></script>
+    <script type="text/javascript" src="{{url_for('static', filename = 'jqwidgets/jqxdata.js')}}"></script>
+    <script type="text/javascript" src="{{url_for('static', filename = 'jqwidgets/jqxbuttons.js')}}"></script>
+    <script type="text/javascript" src="{{url_for('static', filename = 'jqwidgets/jqxscrollbar.js')}}"></script>
+    <script type="text/javascript" src="{{url_for('static', filename = 'jqwidgets/jqxmenu.js')}}"></script>
+    <script type="text/javascript" src="{{url_for('static', filename = 'jqwidgets/jqxlistbox.js')}}"></script>
+    <script type="text/javascript" src="{{url_for('static', filename = 'jqwidgets/jqxdropdownlist.js')}}"></script>
+    <script type="text/javascript" src="{{url_for('static', filename = 'jqwidgets/jqxgrid.js')}}"></script>
+    <script type="text/javascript" src="{{url_for('static', filename = 'jqwidgets/jqxgrid.selection.js')}}"></script>
+    <script type="text/javascript" src="{{url_for('static', filename = 'jqwidgets/jqxgrid.columnsresize.js')}}"></script>
+    <script type="text/javascript" src="{{url_for('static', filename = 'jqwidgets/jqxgrid.filter.js')}}"></script>
+    <script type="text/javascript" src="{{url_for('static', filename = 'jqwidgets/jqxgrid.sort.js')}}"></script>
+    <script type="text/javascript" src="{{url_for('static', filename = 'jqwidgets/jqxgrid.pager.js')}}"></script>
+    <script type="text/javascript" src="{{url_for('static', filename = 'jqwidgets/jqxgrid.grouping.js')}}"></script>
+    <title>jQWidgets Material Design</title>
+    <!-- add the jQWidgets base styles and one of the theme stylesheets -->
+    <link rel="stylesheet" href="{{url_for('static', filename = 'jqwidgets/styles/jqx.base.css')}}" type="text/css"/>
+    <link rel="stylesheet" href="{{url_for('static', filename = 'jqwidgets/styles/jqx.material.css')}}" type="text/css"/>
+    <!-- add the jQWidgets framework -->
+    <script type="text/javascript" src="{{url_for('static', filename = 'jqwidgets/jqxcore.js')}}"></script>
+    <!-- add one or more widgets -->
+    <script type="text/javascript" src="{{url_for('static', filename = 'jqwidgets/jqxbuttons.js')}}"></script>
+
+</head>
+<body style="height: 100%" >
+<!--==================================================== ===========================-->
+<h1 align="center" >Отчет по выбору направлений</h1>
+<select class="custom-select" id="zd" align="center" style="box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.3);margin-left: 1.5%">
+
+    <option value="all" selected="selected">Выберите территории</option>
+    <option value="Альфа" >Альфа</option>
+    <option value="Гамма">Гамма</option>
+    <option value="all">Все</option>
+</select>
+<select class="klass" id="buk" style="box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.3);margin-left: 1.5%">
+    <option value="all" selected="selected">Выберите класс</option>
+    <option value="8-Д" >8-Д</option>
+    <option value="8-Е">8-Е</option>
+    <option value="8-З">8-З</option>
+    <option value="8-Н">8-Н</option>
+    <option value="8-Л">8-Л</option>
+    <option value="8-К">8-К</option>
+    <option value="8-Ж">8-Ж</option>
+    <option value="8-Г">8-Г</option>
+    <option value="8-В">8-В</option>
+    <option value="8-Ш">8-Ш</option>
+</select>
+<select class="pr1" id="pr1" style="box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.3);margin-left: 1.5%">
+    <option value="all" selected="selected">Выберите первый приоритет</option>
+    <option value="физико-математическое" >физико-математическое</option>
+    <option value="информационно-технологическое">информационно-технологическое</option>
+    <option value="инженерное">инженерное</option>
+    <option value="естественнонаучное: физико-химическое">физико-химическое</option>
+    <option value="естественнонаучное: химико-биологическое">химико-биологическое</option>
+    <option value="экономико-математическое">экономико-математическое</option>
+    <option value="универсальное">универсальное</option>
+    <option value="не выбран">не выбран</option>
+    <option value="all">Все</option>
+</select>
+<select class="pr2" id="pr2" style="box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.3);margin-left: 1.5%">
+    <option value="all" selected="selected">Выберите второй приоритет</option>
+    <option value="физико-математическое" >физико-математическое</option>
+    <option value="информационно-технологическое">информационно-технологическое</option>
+    <option value="инженерное">инженерное</option>
+    <option value="естественнонаучное: физико-химическое">физико-химическое</option>
+    <option value="естественнонаучное: химико-биологическое">химико-биологическое</option>
+    <option value="экономико-математическое">экономико-математическое</option>
+    <option value="универсальное">универсальное</option>
+    <option value="не выбран">не выбран</option>
+    <option value="all">Все</option>
+</select>
+<select class="pr3" id="pr3" style="box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.3);margin-left: 1.5%">
+    <option value="all" selected="selected">Выберите третий приоритет</option>
+    <option value="физико-математическое" >физико-математическое</option>
+    <option value="информационно-технологическое">информационно-технологическое</option>
+    <option value="инженерное">инженерное</option>
+    <option value="естественнонаучное: физико-химическое">физико-химическое</option>
+    <option value="естественнонаучное: химико-биологическое">химико-биологическое</option>
+    <option value="экономико-математическое">экономико-математическое</option>
+    <option value="универсальное">универсальное</option>
+    <option value="не выбран">не выбран</option>
+    <option value="all">Все</option>
+</select>
+<h1>
+
+</h1>
+<!--==================================================== ===========================-->
+<div style=" width:100%;height:1000%;">
+    <div id="jqxgrid" style="width:100%; margin-left: auto;margin-right: auto; box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.3) " >
+    </div>
+</div>
+<script src="{{url_for('static', filename = 'a.js')}}"></script>
+<button id="button">Button</button>
+
+<script type="text/javascript">
+    window.onload = function () {
+        const button = new jqxButton("button", {width: '120px', height: '35px', theme: 'material'});
+    };
+
+</script>
+
+</body>
+</html>

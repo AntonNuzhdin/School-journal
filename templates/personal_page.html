@@ -1,0 +1,457 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Yandex.Metrika counter -->
+  <script type="text/javascript" >
+     (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+     m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+     (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+     ym(62879740, "init", {
+          clickmap:true,
+          trackLinks:true,
+          accurateTrackBounce:true,
+          webvisor:true
+     });
+  </script>
+
+  <noscript><div><img src="https://mc.yandex.ru/watch/62879740" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+  <!-- /Yandex.Metrika counter -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, minimum-scale=0.7">
+<meta name="yandex-verification" content="d03d637ae6b120a8" />
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/static/bootstrap.css">
+    <link rel="stylesheet" href="/static/personal.css">
+    <title>Personal_page</title>
+  </head>
+  <style>
+  html {
+    font-size: 16px;
+  }
+  .navbar{
+    margin-bottom: 10%;
+  }
+  .sign{
+    margin-left: 70%;
+    opacity: 0.7;
+
+  }
+
+  .info{
+  background-color: black;
+  margin-top: 15%;
+  height: 360px;
+  }
+  .inform{
+  color: #909090;
+  text-align: center;
+  font-weight: 5;
+
+  color: #909090;
+  text-align: center;
+
+  }
+  body {
+  background: url(http://subtlepatterns.com/patterns/extra_clean_paper.png);
+}
+
+
+  .site{
+  color: white;
+  text-align: center;
+  padding: 45px;
+  font-weight: 30;
+  }
+  .list-group{
+  margin: auto;
+  margin-top: 5%;
+  width: 90%;
+  }
+  body{
+    background: #e9e9e9;
+    background-attachment: fixed;
+    background-size: 200% ;
+  }
+  .list-group-flush {
+    box-shadow: 0 14px 28px rgba(0,0,0,0.2), 0 10px 10px rgba(0,0,0,0.3);
+  }
+
+  h5 {
+  text-align: center;
+  }
+  h3 {
+    text-align: center;
+  }
+.toast{
+  margin-left: auto;
+  margin-right: auto;
+}
+.tab-pane{
+  margin-top: 30px;
+}
+h3{
+  margin-top: 3%;
+}
+body{
+  background: #e9e9e9;
+  background-size: 100% auto;
+  background-attachment: fixed;
+
+}
+/* form starting stylings ------------------------------- */
+.group {
+position: relative;
+margin-bottom: 30px;
+}
+
+input {
+font-size: 16px;
+padding: 10px;
+display: block;
+width: 300px;
+border: none;
+border-bottom: 1px solid #ccc;
+}
+input:focus {
+outline: none;
+}
+label {
+color: #999;
+font-size: 18px;
+position: absolute;
+pointer-events: none;
+left: 10px;
+top: 15px;
+transition: 0.2s ease all;
+-moz-transition: 0.2s ease all;
+-webkit-transition: 0.2s ease all;
+}
+
+/* active state */
+input:focus ~ label, input:valid ~ label {
+top: -15px;
+font-size: 14px;
+color: #5264AE;
+}
+input:focus ~ .bar:before,
+input:focus ~ .bar:after {
+  width: 50%;
+}
+
+
+   li h6 {
+    text-align: center;
+  }
+  h4 {
+    margin-top: 3%;
+  }
+  #not1{
+    margin-bottom: 5%;
+  }
+
+
+  </style>
+  <script>
+
+  $('#Vihod').click(function () {
+header("Location: home.html");
+});
+  </script>
+  <body width:100%; height: "100%">
+
+
+
+  <nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+      <div class="d-flex justify-content-start">
+
+        <img src="{{url_for('static', filename='imgs/LOGO.png')}}" width="40" height="45" class="d-inline-block align-top" alt="">
+      <h4>Личный Кабинет</h4>
+
+      </div>
+
+    </a>
+    <div class="d-flex justify-content-end">
+    <button type="submit" class="btn btn-secondary btn-lg" onclick="window.location.href='/'" id="Vihod">Выход</button>
+  </div>
+
+  </nav>
+  {%if bio == 20%}
+  <div class="d-flex justify-content-between">
+
+
+
+  <div style="background: #FFA500		;"class="toast" role="alert" data-autohide="false" aria-live="assertive" aria-atomic="false">
+    <div class="toast-header">
+      <img src="{{url_for('static', filename='imgs/LOGO.png')}}" class="rounded mr-2" width="20" height="25" alt="...">
+      <strong class="mr-auto">Любимый_лицей :)</strong>
+      <small>few seconds ago</small>
+      <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="toast-body">
+      Консультация по БИОЛОГИИ №2 (проводит Евгений Александрович Блинков) для поступающих в профильный химико-биологический класс будет проводиться 18 мая в 17:30.<br>
+      Будет объяснена техническая составляющая тестирования, а также разобраны разные типы вопросов.<br>
+ 
+      Идентификатор конференции: 717 8493 3074<br>
+      Пароль: bio<br>
+ 
+      Вся актуальная информация – в курсе "Подготовка к межшкольной комплексной олимпиаде по биологии 1502" на образовательной платформе stepik.org, на которой будет проводиться тестирование.<br>
+      Необходимо 18 мая:<br>
+      зарегистрироваться на этой платформе (указать почту, которая была предоставлена для входа на 1502энергия.рф)<br>
+      переходите по ссылке: <a href="https://stepik.org/join-class/07171fce4ab8de94c3937ecea21f7bb60dd0f6b4">https://stepik.org/join-class/07171fce4ab8de94c3937ecea21f7bb60dd0f6b4</a>,<br> тем самым попав в класс "8 лицейский"<br>
+      вам становится доступен для прохождения курс "Подготовка к межшкольной комплексной олимпиаде по биологии 1502"<br>
+      смотрим и изучаем представленные в данном курсе материалы.</div>
+
+
+</div>
+</div>
+{%endif%}
+
+
+
+  <div class="list-group list-group-flush" >
+
+
+
+    <li class="list-group-item"><h3>{{ nickname }}</h3></li>
+{%if admiss == 1%}
+    <!-- <li class="list-group-item"><h5>Ваши профили:</h5> <ul><br> <li>{{ naprav_1 }}</li> <br> <li>{{naprav_2}}</li><br><li>{{naprav_3}}</li></ul></li> -->
+    <li class="list-group-item"><h3>Вы зачислены в <i style="color: red;">{{ to_class }}</i> класс</h3></li>
+{%endif%}
+    <li class="list-group-item"><center><h4 style="color:red;">Уважаемые учащиеся!</h4></center>
+    <h5>
+Списки классов формировались исходя их суммы средних годовых баллов
+учащихся, пересчитанных по 10-балльной системе оценивания (умноженной
+на 2) и баллов за тестирование по информатике, химии, биологии в
+зависимости от направленности класса. Подробные критерии представлены в
+таблице.</h5></li>
+<li class="list-group-item"><center><img src="{{url_for('static', filename='imgs/kret.png')}}" width="650" height="600" class="d-inline-block align-top" alt=""></center>
+</li>
+<li class="list-group-item"><h5>Если вы не попали в желаемый класс, у вас есть возможность пройти
+тестирование по математике, физике и английскому языку в очном формате с
+<strong style="color:red;">20 по 22 августа</strong>. По информатике, химии и биологии очное тестирование не
+проводится! Для записи на очное тестирование необходимо прислать скан заявления от родителей на электронную почту: <strong style="color:red;">ryazantseva-em@1502.moscow</strong>
+<strong style="color:red;">до 21 июня</strong>. В заявлении должны быть указаны следующие сведения: <h5 style="text-align: left"><strong><br>1) ФИО учащегося<br>
+2) класс обучения (в 2019-2020 уч году)<br>
+3) предмет/предметы, по которым вы хотели бы пройти тестирование<br>
+4) желаемый класс зачисления (строго один!)</h5></h5></strong><h5>Информация о дате и времени тестирования также придет в личный кабинет.</h5></li>
+
+    <!-- <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#myModal">Мои средние оценки (beta_test)</button>
+
+    <div id="myModal" class="modal" tabindex="-1" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 style="color: red;"class="modal-title">Мои оценки (beta_test)</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="modal-body">
+
+              <h4 style="color: red; text-align: center;">Средние оценки</h4>
+
+              <table border="1" style="border-collapse: collapse; width: 100%;">
+                <tr>
+                  <td style="color:red;">Предмет</td>
+                  <td style="color:red;"><center>Оценка (10-балльная)</center></td>
+                  <td style="color:red;"><center>Оценка (5-балльная)</center></td>
+
+                </tr>
+                <tr>
+                  <td>Алгебра</td>
+                  <td><strong><center>{{stu_marks[0]}}</center></strong></td>
+                  <td><strong><center>{{stu_marks[0] / 2}}</center></strong></td>
+
+                </tr>
+                <tr>
+                  <td>Геометрия</td>
+                  <td><strong><center>{{stu_marks[1]}}</center></strong></td>
+                  <td><strong><center>{{stu_marks[1] / 2}}</center></strong></td>
+                </tr>
+                <tr>
+                  <td>Русский язык</td>
+                  <td><strong><center>{{stu_marks[2]}}</center></strong></td>
+                  <td><strong><center>{{stu_marks[2] / 2}}</center></strong></td>
+                </tr>
+                <tr>
+                  <td>Физика</td>
+                  <td><strong><center>{{stu_marks[3]}}</center></strong></td>
+                  <td><strong><center>{{stu_marks[3] / 2}}</center></strong></td>
+                </tr>
+                <tr>
+                  <td>Иностранный язык</td>
+                  <td><strong><center>{{stu_marks[4]}}</center></strong></td>
+                  <td><strong><center>{{stu_marks[4] / 2}}</center></strong></td>
+                </tr>
+
+              </table>
+              <small style="color: gray;">*Данные получены с dnevnik.mos.ru в разделе 'все оценки, ср.балл'</small>
+  {%if olimp_bio != "null" or olimp_him != "null" or olimp_inf != "null"%}
+              <h4 style="color: red; text-align: center;">Оценки за внутренние олимпиады</h4>
+
+
+              <table border="1" style="border-collapse: collapse; width: 100%;">
+                <tr>
+                  <td style="color:red;">Предмет</td>
+                  <td style="color:red;"><center>Оценка (10-балльная)</center></td>
+
+                </tr>
+                {%if olimp_inf != None and olimp_inf != "null"%}
+                <tr>
+                  <td>Информатика</td>
+                  <td><strong><center>{{olimp_inf}}</center></strong></td>
+
+                </tr>
+                {%endif%}
+
+                {%if olimp_him != None and olimp_him != "null"%}
+                <tr>
+                  <td>Химия</td>
+                  <td><strong><center>{{olimp_him}}</center></strong></td>
+                </tr>
+                {%endif%}
+
+                {%if olimp_bio != None and olimp_bio != "null"%}
+                <tr>
+                  <td>Биология</td>
+                  <td><strong><center>{{olimp_bio}}</center></strong></td>
+                </tr>
+                {%endif%}
+
+              </table>
+{%endif%}
+
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Закрыть</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 style="color: red;"class="modal-title">Мои оценки</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div> -->
+{%if inf == 20%}
+<li class="list-group-item"><ul><li><strong>Результаты олимпиады по информатике будут известны позже (Смотреть раздел "мои средние оценки (beta_test)")</strong>
+
+</li></ul>
+
+
+{%endif%}
+
+
+
+    {%if chem == 20%}
+    <li class="list-group-item"><ul><li><strong>Результаты олимпиады по химии будут известны позже (Смотреть раздел "мои средние оценки (beta_test)")</strong>
+      {%if him == 120%}
+      <div class="">
+        Разбор варианта олимпиады по химии состоится в <strong>22.05 в 14:10</strong> в Zoom<br>
+        Идентификатор конференции: 315 592 4467 <br>
+        Пароль: 358779
+
+      </div>
+      {%endif%}
+      {%if him == 20%}
+      <div class="">
+        Разбор варианта олимпиады по химии состоится в <strong>22.05 в 16:00</strong> в Zoom<br>
+        Идентификатор конференции: 77868250357<br>
+        Пароль: 1502
+
+      </div>
+      {%endif%}
+      {%if him == 320%}
+      <div class="">
+        Разбор варианта олимпиады по химии состоится в <strong>22.05 в 12:00</strong> в Zoom<br>
+        Идентификатор конференции: 315 592 4467<br>
+        Пароль: 358779
+
+      </div>
+      {%endif%}
+      {%if him == 420%}
+      <div class="">
+        Разбор варианта олимпиады по химии состоится в <strong>22.05 в 16.00</strong> в Zoom<br>
+        Идентификатор конференции: 77868250357 <br>
+        Пароль: 1502
+
+      </div>
+      {%endif%}
+      {%if him == 520%}
+      <div class="">
+        Разбор варианта олимпиады по химии состоится в <strong>25.05 в 14.10</strong> в Zoom<br>
+        Идентификатор конференции: 8923738132<br>
+        Пароль: 141621
+
+      </div>
+      {%endif%}
+      {%if him == 620%}
+      <div class="">
+        Разбор варианта олимпиады по химии состоится в <strong>25.05 в 15.00</strong> в Zoom<br>
+        Идентификатор конференции: 8923738132<br>
+        Пароль: 141621
+
+      </div>
+      {%endif%}
+</li>
+</ul></li>
+    {%endif%}
+<!--
+    {%if bio == 1%}
+    <li class="list-group-item"><ul><li><strong>Результаты олимпиады по биологии будут известны позже</strong>
+</li>
+</ul></li>
+  </li></ul></li>
+
+    {%endif%} -->
+
+
+</div>
+
+<div class=" info" >
+
+
+<h5 class='site'> 2020 © Школа №1502 "Энергия" </h5>
+<h6 class="inform">
+  <br>Ваша территория: {{stu_ter}}
+<br>Если остались вопросы, адрес электронной почты :
+help@stu.1502.moscow<br>
+
+<img class="sign" src="{{url_for('static', filename='imgs/sign3.pdf')}}" width="150" height="150" class="d-inline-block align-top" alt="">
+</div>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+      $(".toast").toast('show')
+    })
+</script>
+<script type="text/javascript">
+    $(document).ready(function(){
+      $('[data-toggle="tooltip"]').tooltip({ boundary: 'window' })
+    })
+</script>
+
+    </body>
+
+    </html>

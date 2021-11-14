@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, minimum-scale=0.7">
+  <link rel="stylesheet" href="/static/missing.css">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  </head>
+
+<body>
+  <style>
+  .list-group{
+    margin-top: 10%;
+  }
+
+  </style>
+
+  <!-- <script>
+  $(function() {
+    $('#AnswerButton1').bootstrapToggle();
+  })
+  </script> -->
+
+    <ul class="list-group col-xs-12 col-lg-10 offset-lg-1">
+      <form method="POST">
+
+      <li class="list-group-item" id="ramka">
+          <div class="d-flex justify-content-center" id="Ot4et">
+            <h3> Отчёт о посещаемости </h3>
+          </div><br>
+          <div id="vash_class">
+            <h6>Ваш класс</h6>
+          </div>
+          <div class="d-justify-center">
+              <select class="form-control" name='ur_class' id="Spisok_klassov">
+                {% for j in spisok_klass %}
+            <option>{{j}}</option>
+          {% endfor %}
+        </select>
+          </div>
+          <div id="Vopr">
+          <h6>Все обучающиеся в школе?</h6>
+        </div>
+
+        <div class="d-flex justify-content-center" id=otvet_ob_ots>
+          <div class="btn-group btn-group-toggle" data-toggle="buttons" id="AnswerButton1">
+  <label class="btn" active>
+    <input type="radio" name="options" id="" checked> Да
+  </label>
+</div>
+          <!-- Button trigger modal -->
+          <button id="AnswerButton2" class="btn" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+            Нет</button><br>
+
+      </div>
+
+      <div class="collapse" id="collapseExample">
+  <div class="form-group">
+    <label>Решение родителей</label>
+    <select class="form-control" name="reshenie" id="exampleFormControlSelect1">
+      {% for i in range(0, 31) %}
+      <option>{{i}}</option>
+      {% endfor %}
+    </select>
+  </div>
+  <div class="form-group" >
+    <label>ОРВИ</label>
+    <select class="form-control" , name="ORVI", id="exampleFormControlSelect1">
+      {% for i in range(0, 31) %}
+      <option>{{i}}</option>
+      {% endfor %}
+    </select>
+  </div>
+  <div class="form-group" >
+    <label>Грипп</label>
+    <select class="form-control" id="exampleFormControlSelect1", name="grip">
+      {% for i in range(0, 31) %}
+      <option>{{i}}</option>
+      {% endfor %}
+    </select>
+  </div>
+  <div class="form-group" >
+    <label>Другое заболевание</label>
+    <select class="form-control" id="exampleFormControlSelect1", name="dr_zab">
+      {% for i in range(0, 31) %}
+      <option>{{i}}</option>
+      {% endfor %}
+    </select>
+  </div>
+  <div class="form-group" >
+    <label>Травма в школе</label>
+    <select class="form-control" id="exampleFormControlSelect1", name="tr_v_school">
+      {% for i in range(0, 31) %}
+      <option>{{i}}</option>
+      {% endfor %}
+    </select>
+  </div>
+  <div class="form-group" >
+    <label>Травма вне школы</label>
+    <select class="form-control" id="exampleFormControlSelect1", name="tr_vne_school">
+      {% for i in range(0, 31) %}
+      <option>{{i}}</option>
+      {% endfor %}
+    </select>
+  </div>
+  <div class="form-group" >
+    <label>Причина отсутствия неизвестна</label>
+    <select class="form-control" id="exampleFormControlSelect1", name="neizvest">
+      {% for i in range(0, 31) %}
+      <option>{{i}}</option>
+      {% endfor %}
+    </select>
+  </div>
+  <div class="form-group" >
+    <label>Дистанционно</label>
+    <select class="form-control" id="exampleFormControlSelect1", name="dist">
+      {% for i in range(0, 31) %}
+      <option>{{i}}</option>
+      {% endfor %}
+    </select>
+  </div>
+  </div>
+  <button type="submit" class="btn btn-warning" id="Send">Отправить</button>
+
+      </li>
+    </form>
+
+    </ul>
+
+
+
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+  </script>
+</body>
+
+</html>

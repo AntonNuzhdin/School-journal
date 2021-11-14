@@ -1,0 +1,25 @@
+head, html{
+    height: 100%;
+    width: 100%;
+    font-size: x-large;
+    vertical-align: center;
+}
+html{
+    background: rgba(10,0,0,0.2);
+}
+
+table{
+    height: 100%;
+    border-collapse: collapse;
+}
+tr{
+    height: 40px;
+}
+.shadow-box{
+    background: white;
+    margin: 0 auto;
+    vertical-align: center;
+    text-align: center;
+    width:70%;
+    margin:0 auto; box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.3)
+}

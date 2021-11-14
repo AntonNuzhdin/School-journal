@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%">
+<head style="height: 100%">
+  <link rel="stylesheet" href="/static/bootstrap.css">
+
+    <meta charset="UTF-8">
+    <meta name="description" content="This is an example ot JavaScript Chart Pie Series with CSV data."/>
+    <link rel="stylesheet" href="../static/jqwidgets/styles/jqx.base.css" type="text/css"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1 minimum-scale=1"/>
+    <script type="text/javascript" src="../static/jqwidgets/jqxcore.js"></script>
+    <script type="text/javascript" src="../static/jqwidgets/jqxdraw.js"></script>
+    <script type="text/javascript" src="../static/jqwidgets/jqxchart.core.js"></script>
+    <script type="text/javascript" src="../static/jqwidgets/jqxdata.js"></script>
+    <link rel="stylesheet" href="../static/jqwidgets/styles/jqx.base.css" type="text/css"/>
+    <script type="text/javascript" src="../static/jqwidgets/jqxcore.js"></script>
+    <script type="text/javascript" src="../static/jqwidgets/jqxdata.js"></script>
+    <script type="text/javascript" src="../static/jqwidgets/jqxbuttons.js"></script>
+    <script type="text/javascript" src="../static/jqwidgets/jqxscrollbar.js"></script>
+    <script type="text/javascript" src="../static/jqwidgets/jqxmenu.js"></script>
+    <script type="text/javascript" src="../static/jqwidgets/jqxlistbox.js"></script>
+    <script type="text/javascript" src="../static/jqwidgets/jqxdropdownlist.js"></script>
+    <script type="text/javascript" src="../static/jqwidgets/jqxgrid.js"></script>
+    <script type="text/javascript" src="../static/jqwidgets/jqxgrid.selection.js"></script>
+    <script type="text/javascript" src="../static/jqwidgets/jqxgrid.columnsresize.js"></script>
+    <script type="text/javascript" src="../static/jqwidgets/jqxgrid.filter.js"></script>
+    <script type="text/javascript" src="../static/jqwidgets/jqxgrid.sort.js"></script>
+    <script type="text/javascript" src="../static/jqwidgets/jqxgrid.pager.js"></script>
+    <script type="text/javascript" src="../static/jqwidgets/jqxgrid.grouping.js"></script>
+
+    <script type="text/javascript" src="../static/jqwidgets/jqxgrid.edit.js"></script>
+    <script type="text/javascript" src="../static/jqwidgets/jqxtooltip.js"></script>
+    <script type="text/javascript">
+    $('#Vihod').click(function () {
+    header("Location: home.html");
+    });
+  </script>
+<body style="height: 100%">
+<div style="margin-right: 5%; margin-left: 5%" class="d-flex justify-content-between">
+  <img src="{{url_for('static', filename='imgs/LOGO.png')}}"  width="120" height="147" class="d-inline-block align-top" alt="">
+  <h1>Оценки за тестирование</h1>
+  <h5><button style="margin-top:20%;" href="#" title="Очистить все" class="btn btn-info btn-lg" onclick="refresh()">Reload</button></h5>
+
+  <h5><button style="margin-top:20%;"onclick="window.location.href='/'" class="btn btn-info btn-lg" id="Vihod">Выход</button></h5>
+<script type="text/javascript">
+
+function refresh()
+    {
+        window.location.reload();
+    }
+  </script>
+
+</div>
+<div style=" width:100%;height:100%; text-align: center" id="osn">
+
+
+    <h2>По предмету:</h2>
+    <h1 style="color: red" id="predm">ХИМИЯ</h1>
+
+    <button class="btn btn-info" id="him">Химия</button>
+    <button class="btn btn-info" id="inf">Информатика</button>
+    <button class="btn btn-info" id="bio">Биология</button>
+    <h1>
+
+    </h1>
+  </div>
+
+    <div id="jqxgrid"
+         style="height:100%; text-align: center; width:95%; margin:0 auto; box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.3) ">
+    </div>
+</div>
+</body>
+</head>
+<script src="../static/metod.js"></script>
+</html>

@@ -1,0 +1,39 @@
+body{
+  background: url('https://sun9-44.userapi.com/c857320/v857320842/2c653/IKHQ5GZS7fo.jpg');
+}
+.info{
+  background-color: black;
+  margin-top: 30%;
+  height: 270px;
+}
+.inform{
+  color: #909090;
+  text-align: center;
+  font-weight: 5;
+
+  color: #909090;
+  text-align: center;
+
+}
+h6{
+  font-weight: 10;
+
+}
+h5{
+  color: white;
+  text-align: center;
+  padding: 45px;
+  font-weight: 30;
+}
+.btn{
+  width: 100%;
+}
+h1{
+  color: black;
+  text-align: center;
+  padding: 40px;
+  font-weight: 300;
+}
+.list-group{
+  margin-bottom: 30px;
+}

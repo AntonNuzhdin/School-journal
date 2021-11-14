@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<style media="screen">
+  .container{
+    padding-top: 5%;
+    padding-bottom: 5%;
+
+  }
+
+</style>
+<body>
+  <div class="container">
+
+  <div class="d-flex justify-content-between">
+
+    <img src="{{url_for('static', filename='imgs/LOGO.png')}}"  width="150" height="180" class="d-inline-block align-top" alt="">
+
+    <h5>Здравствуйте, {{teacher}}</h5>
+
+    <h5> {{name}}</h5>
+    <div class="d-flex flex-column bd-highlight mb-3">
+    <h5><button onclick="window.location.href='/'" class="btn btn-warning btn-lg" id="Vihod">Выход</button></h5>
+  </div>
+
+
+  </div>
+  <div class="shadow-box">
+  <table border="1px" align="center" width="100%" cellspacing="0" >
+      <tr>
+          <th>ФИО</th>
+          <th>Класс</th>
+          <th>Присутствие</th>
+
+      </tr>
+      {% for i in studentsList %}
+      <tr height="50px">
+          <td>{{i[1]}}</td>
+          <td><center>{{i[2]}}</center></td>
+          <td  style="align: center">
+              <center>
+                  <input type="checkbox">
+              </center>
+          </td>
+          <td width="2px" style="visibility: hidden; display: none; width: 2px">{{i[9]}}</td>
+      </tr >
+      {% endfor %}
+
+
+  </table>
+  </div>
+</div>
+
+</body>
+<script>
+    checkboxes = document.getElementsByTagName("input");
+    for (var i = 0; i < checkboxes.length; i++) {
+        var checkbox = checkboxes[i];
+        var currentRow = checkbox.parentNode.parentNode.parentNode;
+        console.log(currentRow)
+        var value=currentRow.getElementsByTagName("td")[3];
+        console.log(value.textContent)
+        if(value.textContent=='Да'){
+            $(checkbox).attr('checked', true);
+        }
+
+    }
+</script>
+<script>
+
+    checkboxes = document.getElementsByTagName("input");
+    for (var i = 0; i < checkboxes.length; i++) {
+        var checkbox = checkboxes[i];
+        checkbox.onclick = function() {
+
+            var currentRow = this.parentNode.parentNode.parentNode;
+            var secondColumn = currentRow.getElementsByTagName("td")[0];
+            console.log(secondColumn)
+            var k = currentRow.getElementsByTagName("td")[2];
+            console.log(k)
+            //ОТПРАВКА ЗАПРОСА.
+            //alert("My text is: " + secondColumn.textContent );
+            var req = new XMLHttpRequest();
+            url="https://1502энергия.рф/user/"+secondColumn.textContent;
+            var m =k.firstElementChild.firstElementChild
+            console.log(m);
+            console.log('AAAAAAAAAAa')
+            if ($(m).is(':checked')){
+                url+="/1"
+                //alert('checked');
+            } else {
+                url+="/0"
+                //alert('Выключен');
+            }
+            const encoded = encodeURI(url);
+            req.addEventListener("load", () => {
+                //req.responseText
+                console.log(req.responseText);
+
+            });
+
+            console.log(encoded);
+            req.open('GET', encoded, true);
+            req.send();
+        };
+    }
+</script>
+</html>

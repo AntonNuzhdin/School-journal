@@ -1,0 +1,63 @@
+#dropdownMenuButton {
+  position: relative;
+  left: 200%;
+  border: 2px solid #c0c0c0;
+}
+
+#dropdownMenuButton:hover {
+  background: #c0c0c0;
+}
+
+#AnswerButton1 {
+  border: 2px solid #c0c0c0;
+  /* margin-right: 3%; */
+  border-radius: 5px;
+}
+
+#AnswerButton1:hover {
+  background: #c0c0c0;
+}
+
+#AnswerButton2 {
+  border: 2px solid #c0c0c0;
+}
+
+#AnswerButton2:hover {
+  background: #c0c0c0;
+}
+
+#otvet_ob_ots {
+  margin-right: 3.5%;
+}
+
+#Send {
+  margin-left: 45.5%;
+  margin-top: 4%;
+}
+
+#Spisok_klassov {
+  height: 30px;
+  width: 105px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+#ramka {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  margin-left: 12px;
+}
+h6{
+text-align: center;
+margin-top: 20px;
+
+}
+
+#Ot4et {
+  margin-right: 2%;
+}
+
+.d-flex{
+margin-left: auto;
+margin-right: auto;
+}

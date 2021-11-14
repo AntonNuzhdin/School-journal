@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, minimum-scale=0.7">
+
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/static/bootstrap.css">
+    <link rel="stylesheet" href="/static/_form_choice_.css">
+    <title>Log in</title>
+  </head>
+<style media="screen">
+  .tab-pane{
+    margin-top: 30px;
+  }
+  h3{
+    margin-top: 3%;
+  }
+  body{
+    background: #e9e9e9;
+    background-size: 100% auto;
+    background-attachment: fixed;
+
+  }
+  /* form starting stylings ------------------------------- */
+.group {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+input {
+  font-size: 16px;
+  padding: 10px;
+  display: block;
+  width: 300px;
+  border: none;
+  border-bottom: 1px solid #ccc;
+}
+input:focus {
+  outline: none;
+}
+label {
+  color: #999;
+  font-size: 18px;
+  position: absolute;
+  pointer-events: none;
+  left: 10px;
+  top: 15px;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+
+/* active state */
+input:focus ~ label, input:valid ~ label {
+  top: -15px;
+  font-size: 14px;
+  color: #5264AE;
+}
+
+
+/* BOTTOM BARS ================================= */
+.bar {
+  position: relative;
+  display: block;
+  width: 320px;
+}
+.bar:before, .bar:after {
+  content: "";
+  height: 2px;
+  width: 0;
+  bottom: 0;
+  position: absolute;
+  background: #5264AE;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+.bar:before {
+  left: 50%;
+}
+.bar:after {
+  right: 50%;
+}
+
+/* active state */
+input:focus ~ .bar:before,
+input:focus ~ .bar:after {
+  width: 50%;
+}
+↓ Развернуть
+
+  .sign{
+    margin-left: 80%;
+    opacity: 0.5;
+  }
+  #ramka {
+    margin-top: 5%;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.2), 0 10px 10px rgba(0,0,0,0.3);
+  }
+  .info{
+  background-color: black;
+  margin-top: 30%;
+  height: 360px;
+  }
+  .inform{
+  color: #909090;
+  text-align: center;
+  font-weight: 5;
+
+  color: #909090;
+  text-align: center;
+
+  }
+  .site{
+  color: white;
+  text-align: center;
+  padding: 45px;
+  font-weight: 30;
+  }
+  .custom-control-input{
+    margin: 0 10px;
+  }
+  .custom-control{
+  display: flex;
+  flex-flow: row wrap;
+}
+.sm{
+  box-shadow: 8px 8px 8px 8px rgba(0,0,0,0.07), 0px 8px 8px rgba(0,0,0,0.07);
+  margin-bottom: 4%;
+  margin-top: 4%;
+
+}
+#n2{
+  margin-top: 0.8%;
+  margin-left: 4%;
+}
+#n1{
+}
+.btn{
+  margin-top: 5%;
+}
+#ramka{
+}
+
+
+</style>
+
+<body class="text-center">
+
+    <div class="container">
+
+    <div class="d-flex justify-content-between">
+      <img src="{{url_for('static', filename='imgs/LOGO.png')}}"  width="120" height="147" class="d-inline-block align-top" alt="">
+
+      <h3>Приветствую, {{ teacher }}</h3>
+    <button onclick="location.href='/'" class="btn btn-primary mb-2" >Выход</button>
+
+    </div>
+    </div>
+    <form id='myForm' method="POST">
+
+<div class="container">
+
+{%for i in range(len_classes)%}
+<li class="list-group-item" id="ramka">
+
+  <div class="d-flex bd-highlight">
+
+    <div id='n1' class="p-2 flex-fill bd-highlight">
+      <h3>{{students}}</h3>
+            <h4>{{classes[i][0]}}</h4>
+            <div class="text-left">
+            <small text-align='left'>Класс ученика: {{complex[i][0]}}</small><br>
+            <small align='left'>Приоритет 1: {{complex[i][2][0]}}</small><br>
+            <small align='left'>Приоритет 2: {{complex[i][2][1]}}</small><br>
+            <small align='left'>Приоритет 3: {{complex[i][2][2]}}</small>
+          </div>
+          <hr>
+            <div class="group">
+              <input name='{{classes[i][0]}}'type="text" >
+              <span class="bar"></span>
+              <label>Характеристика ученика по моему предмету</label>
+            </div>
+            <select name="{{classes[i][0]+"ch"}}" class="custom-select" multiple>
+              <option selected>Выберите один из вариантов</option>
+              <option value="Рекомендую">Рекомендую</option>
+              <option value="Не рекомендую">Не рекомендую</option>
+              <option value="Нейтрально">Нейтрально</option>
+
+            </select>
+            <button type="submit" class="btn btn-primary mb-2">Отправить</button>
+
+        </div>
+        <div style="margin-top: ;" class="p-2 bd-highlight">
+            <ul class="list-group">
+              <small>Текущие характеристики ученика</small>
+              <li class="list-group-item">Физика: {{complex[i][1][0]}}</li>
+              <li class="list-group-item list-group-item-primary">Информатика: {{complex[i][1][1]}}</li>
+              <li class="list-group-item list-group-item-secondary">Биология: {{complex[i][1][2]}}</li>
+              <li class="list-group-item list-group-item-success">Черчение: {{complex[i][1][3]}}</li>
+              <li class="list-group-item list-group-item-danger">Русский: {{complex[i][1][4]}}</li>
+              <li class="list-group-item list-group-item-warning">Математика: {{complex[i][1][5]}}</li>
+              <li class="list-group-item list-group-item-info">Химия: {{complex[i][1][6]}}</li>
+              <li class="list-group-item list-group-item-light">Иностранный язык: {{complex[i][1][7]}}</li>
+              <li class="list-group-item list-group-item-light">Обществознание: {{complex[i][1][8]}}</li>
+
+            </ul>
+
+            </div>
+
+</div>
+</li>
+
+{%endfor%}
+
+</form>
+
+</div>
+
+
+<div class=" info" >
+
+
+<h5 class='site'> 2020 © Школа №1502 "Энергия" </h5>
+<h6 class="inform">
+<br>Если остались вопросы, адрес электронной почты :
+1502@edu.mos.ru <br> Директор:
+Чудов Владимир Львович<br>
+
+<img class="sign" src="{{url_for('static', filename='imgs/sign3.pdf')}}" width="150" height="150" class="d-inline-block align-top" alt="">
+</div>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </body>
+
+    </html>

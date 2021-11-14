@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<meta charset="utf-8">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <style>
+        body, html {
+            height: 100%
+        }
+        h1{
+            margin-top: 3%;
+        }
+        .btn{
+            margin-top: 3%;
+            margin-bottom: 3%;
+        }
+        a{
+          margin-top: 3%;
+          margin-bottom: 3%;
+        }
+    </style>
+    <meta name="description" content="This is an example ot JavaScript Chart Pie Series with CSV data."/>
+    <link rel="stylesheet" href="../templates/jqwidgets/styles/jqx.base.css" type="text/css"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1 minimum-scale=1"/>
+    <script type="text/javascript" src="../templates/jqwidgets/jqxcore.js"></script>
+    <script type="text/javascript" src="../templates/jqwidgets/jqxdraw.js"></script>
+    <script type="text/javascript" src="../templates/jqwidgets/jqxchart.core.js"></script>
+    <script type="text/javascript" src="../templates/jqwidgets/jqxdata.js"></script>
+    <link rel="stylesheet" href="../templates/jqwidgets/styles/jqx.base.css" type="text/css"/>
+    <script type="text/javascript" src="../templates/jqwidgets/jqxcore.js"></script>
+    <script type="text/javascript" src="../templates/jqwidgets/jqxdata.js"></script>
+    <script type="text/javascript" src="../templates/jqwidgets/jqxbuttons.js"></script>
+    <script type="text/javascript" src="../templates/jqwidgets/jqxscrollbar.js"></script>
+    <script type="text/javascript" src="../templates/jqwidgets/jqxmenu.js"></script>
+    <script type="text/javascript" src="../templates/jqwidgets/jqxlistbox.js"></script>
+    <script type="text/javascript" src="../templates/jqwidgets/jqxdropdownlist.js"></script>
+    <script type="text/javascript" src="../templates/jqwidgets/jqxgrid.js"></script>
+    <script type="text/javascript" src="../templates/jqwidgets/jqxgrid.selection.js"></script>
+    <script type="text/javascript" src="../templates/jqwidgets/jqxgrid.columnsresize.js"></script>
+    <script type="text/javascript" src="../templates/jqwidgets/jqxgrid.filter.js"></script>
+    <script type="text/javascript" src="../templates/jqwidgets/jqxgrid.sort.js"></script>
+    <script type="text/javascript" src="../templates/jqwidgets/jqxgrid.pager.js"></script>
+    <script type="text/javascript" src="../templates/jqwidgets/jqxgrid.grouping.js"></script>
+
+    <script type="text/javascript" src="../templates/jqwidgets/jqxgrid.edit.js"></script>
+    <script type="text/javascript" src="../templates/jqwidgets/jqxtooltip.js"></script>
+    <title>Выбор направлений</title>
+    <!-- add the jQWidgets base styles and one of the theme stylesheets -->
+    <link rel="stylesheet" href="../templates/jqwidgets/styles/jqx.base.css" type="text/css"/>
+    <link rel="stylesheet" href="../templates/jqwidgets/styles/jqx.material.css" type="text/css"/>
+    <!-- add the jQWidgets framework -->
+    <script type="text/javascript" src="../templates/jqwidgets/jqxcore.js"></script>
+    <!-- add one or more widgets -->
+    <script type="text/javascript" src="../templates/jqwidgets/jqxbuttons.js"></script>
+    <style>
+        /* #contentjqxgrid
+         {
+             display:flex;
+             justify-content: center;
+         }*/
+    </style>
+</head>
+<body style="height: 100%">
+<!--==================================================== ===========================-->
+<div class="d-flex justify-content-between" style="width: 95%">
+    <img src="../static/imgs/LOGO.png"  width="120" height="147" class="d-inline-block align-top" alt="">
+
+    <h1 align="center">Отчет по выбору направлений</h1>
+    <a href="https://xn--1502-o4dlw1b2a1k1a.xn--p1ai/static/viborka.xlsx">
+      <button class="btn btn-outline-success btn-lg" class="btn">Скачать файл</button>
+    </a>
+
+    <button onclick="window.location.href='/'" class="btn btn-warning btn-lg" id="Vihod">Выход</button>
+
+</div>
+
+
+<!--<div class="diagrams">
+    <div id='chartContainer' style="width: 400px; height: 400px;"></div>
+    <div id='chartContainer2' style="width: 400px; height: 400px;"></div>
+</div>-->
+</body>
+<!--
+<select class="custom-select" id="zd" align="center"
+        style="box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.3);margin-left: 1.5%">
+
+    <option value="all" selected="selected">Выберите территории</option>
+    <option value="Альфа">Альфа</option>
+    <option value="Гамма">Гамма</option>
+    <option value="all">Все</option>
+</select>
+
+
+<select class="klass" id="buk"
+        style="box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.3);margin-left: 1.5%">
+    <option value="all" selected="selected">Выберите класс</option>
+    <option value="8-Д">8-Д</option>
+    <option value="8-Е">8-Е</option>
+    <option value="8-З">8-З</option>
+    <option value="8-Н">8-Н</option>
+    <option value="8-Л">8-Л</option>
+    <option value="8-К">8-К</option>
+    <option value="8-Ж">8-Ж</option>
+    <option value="8-Г">8-Г</option>
+    <option value="8-В">8-В</option>
+    <option value="8-Ш">8-Ш</option>
+</select>
+<select class="pr1" id="pr1"
+        style="box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.3);margin-left: 1.5%">
+    <option value="all" selected="selected">Выберите первый приоритет</option>
+    <option value="физико-математическое">физико-математическое</option>
+    <option value="информационно-технологическое">информационно-технологическое</option>
+    <option value="инженерное">инженерное</option>
+    <option value="естественнонаучное: физико-химическое">физико-химическое</option>
+    <option value="естественнонаучное: химико-биологическое">химико-биологическое</option>
+    <option value="экономико-математическое">экономико-математическое</option>
+    <option value="универсальное">универсальное</option>
+    <option value="не выбран">не выбран</option>
+    <option value="all">Все</option>
+</select>
+<select class="pr2" id="pr2"
+        style="box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.3);margin-left: 1.5%">
+    <option value="all" selected="selected">Выберите второй приоритет</option>
+    <option value="физико-математическое">физико-математическое</option>
+    <option value="информационно-технологическое">информационно-технологическое</option>
+    <option value="инженерное">инженерное</option>
+    <option value="естественнонаучное: физико-химическое">физико-химическое</option>
+    <option value="естественнонаучное: химико-биологическое">химико-биологическое</option>
+    <option value="экономико-математическое">экономико-математическое</option>
+    <option value="универсальное">универсальное</option>
+    <option value="не выбран">не выбран</option>
+    <option value="all">Все</option>
+</select>
+<select class="pr3" id="pr3"
+        style="box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.3);margin-left: 1.5%">
+    <option value="all" selected="selected">Выберите третий приоритет</option>
+    <option value="физико-математическое">физико-математическое</option>
+    <option value="информационно-технологическое">информационно-технологическое</option>
+    <option value="инженерное">инженерное</option>
+    <option value="естественнонаучное: физико-химическое">физико-химическое</option>
+    <option value="естественнонаучное: химико-биологическое">химико-биологическое</option>
+    <option value="экономико-математическое">экономико-математическое</option>
+    <option value="универсальное">универсальное</option>
+    <option value="не выбран">не выбран</option>
+    <option value="all">Все</option>
+</select>-->
+<h1>
+
+</h1>
+<!--===============1===================================== ===========================-->
+<div style=" width:100%;height:1000%; text-align: center">
+    <table style=" margin-left: auto;margin-right: auto; text-align: center;width:95%">
+        <tr style="width:100%; margin:0 auto; box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.3) ">
+            <td style="  width: 33%; height: 400px;" id='chartContainer' ></td>
+            <td style=" width: 33%; height: 400px;" id='chartContainer2'></td>
+            <td style=" width: 33%; height: 400px;" id='chartContainer3'></td>
+        </tr>
+    </table>
+    <h1>
+
+    </h1>
+    <div id="jqxgrid"
+         style="width:100%; margin:0 auto; box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.3) ">
+    </div>
+</div>
+<script src="../static/a.js"></script>
+
+
+
+</html>

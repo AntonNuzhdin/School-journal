@@ -1,0 +1,677 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, minimum-scale=0.7">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+          <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+          <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+          <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+          <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css">
+
+          <link type="text/css" rel="StyleSheet" href="https://bootstraptema.ru/plugins/2016/shieldui/style.css">
+
+          <script src="https://bootstraptema.ru/plugins/2016/shieldui/script.js"></script>
+
+      <style>
+      .btn:hover{
+
+          background: #c0c0c0;
+
+      }
+      h4{
+        margin-top: 3%;
+      }
+        .form-group {
+          width: 180px;
+
+        }
+        .grid-centere{
+          margin-top: 2%;
+        }
+        .table-container {
+          width: 100%;
+          overflow: auto;
+          -webkit-overflow-scrolling: touch;
+        }
+        .grid-center {
+          /* display: grid; */
+          margin-top: 10%;
+          align-items: center;
+          height: 100%;
+        }
+
+        #Vihod {
+          position: fixed;
+          margin-left: 83%;
+          margin-top: 3%;
+        }
+
+        #ramka {
+          box-shadow: 0 14px 28px rgba(0,0,0,0.2), 0 10px 10px rgba(0,0,0,0.3);
+          margin-left: 1.5%;
+        }
+
+        /* #Otpr {
+          margin-left: 22%;
+        } */
+
+        h4 {
+          text-align: center;
+        }
+
+
+        .calendar {
+          width: 180px;
+        }
+        .data {
+          margin-top: 2%;
+        }
+        .d-flex{
+          margin-top: 5%;
+
+        }
+        #stat{
+          width: auto;
+          height: auto;
+
+        }
+
+      </style>
+
+      <script type="text/javascript">
+
+      $(function(){
+       $('#date').daterangepicker({
+       singleDatePicker: true,
+       locale: {
+       format: 'YYYY-MM-DD'
+       }
+       });
+      });
+      $('#Vihod').click(function () {
+  header("Location: home.html");
+});
+      </script>
+
+
+      <ul class="list-group col-xs-12 col-lg-10 offset-lg-1">
+        <div id="Vihod">
+        <button type="submit" class="btn btn-warning btn-lg" onclick="window.location.href='/'">Выход</button>
+       </div>
+        <div class="grid-center">
+        <li class="list-group-item" id="ramka">
+
+      <form method="POST">
+      <div class="d-flex justify-content-center">
+        <div class="calendar">
+
+        <h4>Выберите дату</h4>
+          <div class="data">
+          <input type="date" class="form-control" id="date" name="date_cal" placeholder="Дата" required>
+        </div><br>
+
+      <div class="form-group">
+      <h4>Выберите территорию</h4>
+      <select class="form-control" name='terri'>
+        <option>Улица Молостовых, дом 10А</option>
+        <option>Улица Девятая Рота, дом 14 А</option>
+        <option>2-я улица Бухвостова, дом 6</option>
+        <option>Саянская улица, дом 3А</option>
+        <option>Шоссе Энтузиастов, дом 96Г</option>
+        <option>Шоссе Энтузиастов, дом 94А</option>
+        <option>Шоссе Энтузиастов, дом 94Б</option>
+        <option>Шоссе Энтузиастов, дом 96А</option>
+        <option>Шоссе Энтузиастов, дом 96Б</option>
+        </select>
+
+
+      </div>
+      </div>
+    </div>
+
+    <div class="d-flex justify-content-center">
+    <button type="submit" class="btn btn-warning btn-lg" id="Otpr">Отправить</button>
+  </div>
+  </form>
+
+
+
+</li>
+  </div>
+</ul>
+<ul class="list-group col-xs-12 col-lg-10 offset-lg-1">
+  <div>
+  <div class="grid-centere">
+  <li class="list-group-item" id="ramka">
+
+<div class="table-container">
+  <h4><p>ОБЩАЯ СВОДНАЯ ТАБЛИЦА ПО ВСЕМУ КОМПЛЕКСУ</p></h4>
+
+
+  <p>&nbsp;</p>
+  <table id='stat' border="3" style="border-collapse: collapse; width: 100%;">
+    <tbody id='stat'>
+      <tr>
+             <td style="width: 13.240740740740744%; text-align: center;">
+          <p>Территория</p>
+        </td>
+        <td style="width: 13.240740740740744%; text-align: center;">
+     <p>Всего учеников</p>
+   </td>
+        <td style="width: 13.240740740740744%; text-align: center;">
+          <p>Решение родителей</p>
+        </td>
+        <td style="width: 8.351851851851851%; text-align: center;">
+          <p>ОРВИ</p>
+        </td>
+        <td style="width: 8.5%; text-align: center;">
+          <p>Грипп</p>
+        </td>
+        <td style="width: 13.981481481481481%; text-align: center;">
+          <p>Другое заболевание</p>
+        </td>
+        <td style="width: 14.87037037037037%; text-align: center;">
+          <p>Травма в школе</p>
+        </td>
+        <td style="width: 15.314814814814817%; text-align: center;">
+          <p>Травма вне школы</p>
+        </td>
+        <td style="width: 10.101851851851851%; text-align: center;">
+          <p>Причина неизвестна</p>
+        </td>
+        <td style="width: 10.101851851851851%; text-align: center;">
+          <p>Дистанционно</p>
+        </td>
+        <td style="width: 15.314814814814817%; text-align: center;">
+          <p>Присутствующие</p>
+        </td>
+        <td style="width: 7.583333333333334%; text-align: center;">
+          <p>Всего отсутствует: </p>
+        </td>
+        <td style="width: 10.101851851851851%; text-align: center;">
+          <p> Процент отсутствия</p>
+        </td>
+
+      </tr>
+  <tr>
+         <td style="width: 13.240740740740744%; text-align: center;">
+      <p> Улица Молостовых, дом 10А</p>
+    </td>
+    <td style="width: 7.583333333333334%; text-align: center;">
+      <p>{{stat['Улица Молостовых, дом 10А']['всего учеников']}}</p>
+    </td>
+    <td style="width: 13.240740740740744%; text-align: center;">
+      <p>{{stat['Улица Молостовых, дом 10А']['решение родителей']}}</p>
+    </td>
+    <td style="width: 8.351851851851851%; text-align: center;">
+      <p>{{stat['Улица Молостовых, дом 10А']['ОРВИ']}}</p>
+    </td>
+    <td style="width: 8.5%; text-align: center;">
+      <p> {{stat['Улица Молостовых, дом 10А']['грипп']}}</p>
+    </td>
+    <td style="width: 13.981481481481481%; text-align: center;">
+      <p>{{stat['Улица Молостовых, дом 10А']['другое заболевание']}}</p>
+    </td>
+    <td style="width: 14.87037037037037%; text-align: center;">
+      <p>{{stat['Улица Молостовых, дом 10А']['травма в школе']}}</p>
+    </td>
+    <td style="width: 15.314814814814817%; text-align: center;">
+      <p>{{stat['Улица Молостовых, дом 10А']['травма вне школы']}}</p>
+    </td>
+    <td style="width: 10.101851851851851%; text-align: center;">
+      <p>{{stat['Улица Молостовых, дом 10А']['причина неизвестна']}}</p>
+    </td>
+
+    </td>
+    <td style="width: 10.101851851851851%; text-align: center;">
+      <p>{{stat['Улица Молостовых, дом 10А']['дистанционно']}}</p>
+    </td>
+    <td style="width: 7.583333333333334%; text-align: center;">
+      <p>{{stat['Улица Молостовых, дом 10А']['присутствующие']}}</p>
+    </td>
+
+    <td style="width: 7.583333333333334%; text-align: center;">
+      <p>{{stat['Улица Молостовых, дом 10А']['итог по зданию']}}  </p>
+    </td>
+    <td style="width: 7.583333333333334%; text-align: center;">
+      <p>{{stat['Улица Молостовых, дом 10А']['процент отсутствия']}}</p>
+    </td>
+  </tr>
+  <tr>
+         <td style="width: 13.240740740740744%; text-align: center;">
+      <p>2-я улица Бухвостова, дом 6</p>
+    </td>
+    <td style="width: 7.583333333333334%; text-align: center;">
+      <p>{{stat['2-я улица Бухвостова, дом 6']['всего учеников']}}</p>
+    </td>
+    <td style="width: 13.240740740740744%; text-align: center;">
+      <p>{{stat['2-я улица Бухвостова, дом 6']['решение родителей']}}</p>
+    </td>
+    <td style="width: 8.351851851851851%; text-align: center;">
+      <p>{{stat['2-я улица Бухвостова, дом 6']['ОРВИ']}}</p>
+    </td>
+    <td style="width: 8.5%; text-align: center;">
+      <p> {{stat['2-я улица Бухвостова, дом 6']['грипп']}}</p>
+    </td>
+    <td style="width: 13.981481481481481%; text-align: center;">
+      <p>{{stat['2-я улица Бухвостова, дом 6']['другое заболевание']}}</p>
+    </td>
+    <td style="width: 14.87037037037037%; text-align: center;">
+      <p>{{stat['2-я улица Бухвостова, дом 6']['травма в школе']}}</p>
+    </td>
+    <td style="width: 15.314814814814817%; text-align: center;">
+      <p>{{stat['2-я улица Бухвостова, дом 6']['травма вне школы']}}</p>
+    </td>
+    <td style="width: 10.101851851851851%; text-align: center;">
+      <p>{{stat['2-я улица Бухвостова, дом 6']['причина неизвестна']}}</p>
+    </td>
+    <td style="width: 10.101851851851851%; text-align: center;">
+      <p>{{stat['2-я улица Бухвостова, дом 6']['дистанционно']}}</p>
+    </td>
+    <td style="width: 7.583333333333334%; text-align: center;">
+      <p>{{stat['2-я улица Бухвостова, дом 6']['присутствующие']}}</p>
+    </td>
+    <td style="width: 7.583333333333334%; text-align: center;">
+      <p>{{stat['2-я улица Бухвостова, дом 6']['итог по зданию']}}  </p>
+    </td>
+    <td style="width: 7.583333333333334%; text-align: center;">
+      <p>{{stat['2-я улица Бухвостова, дом 6']['процент отсутствия']}}</p>
+    </td>
+
+  </tr>  <tr>
+           <td style="width: 13.240740740740744%; text-align: center;">
+        <p> Улица Девятая Рота, дом 14 А</p>
+      </td>
+      <td style="width: 7.583333333333334%; text-align: center;">
+        <p>{{stat['Улица Девятая Рота, дом 14 А']['всего учеников']}}</p>
+      </td>
+      <td style="width: 13.240740740740744%; text-align: center;">
+        <p>{{stat['Улица Девятая Рота, дом 14 А']['решение родителей']}}</p>
+      </td>
+      <td style="width: 8.351851851851851%; text-align: center;">
+        <p>{{stat['Улица Девятая Рота, дом 14 А']['ОРВИ']}}</p>
+      </td>
+      <td style="width: 8.5%; text-align: center;">
+        <p> {{stat['Улица Девятая Рота, дом 14 А']['грипп']}}</p>
+      </td>
+      <td style="width: 13.981481481481481%; text-align: center;">
+        <p>{{stat['Улица Девятая Рота, дом 14 А']['другое заболевание']}}</p>
+      </td>
+      <td style="width: 14.87037037037037%; text-align: center;">
+        <p>{{stat['Улица Девятая Рота, дом 14 А']['травма в школе']}}</p>
+      </td>
+      <td style="width: 15.314814814814817%; text-align: center;">
+        <p>{{stat['Улица Девятая Рота, дом 14 А']['травма вне школы']}}</p>
+      </td>
+      <td style="width: 10.101851851851851%; text-align: center;">
+        <p>{{stat['Улица Девятая Рота, дом 14 А']['причина неизвестна']}}</p>
+      </td>
+      <td style="width: 10.101851851851851%; text-align: center;">
+        <p>{{stat['Улица Девятая Рота, дом 14 А']['дистанционно']}}</p>
+      </td>
+      <td style="width: 7.583333333333334%; text-align: center;">
+        <p>{{stat['Улица Девятая Рота, дом 14 А']['присутствующие']}}</p>
+      </td>
+      <td style="width: 7.583333333333334%; text-align: center;">
+        <p>{{stat['Улица Девятая Рота, дом 14 А']['итог по зданию']}}  </p>
+      </td>
+      <td style="width: 7.583333333333334%; text-align: center;">
+        <p>{{stat['Улица Девятая Рота, дом 14 А']['процент отсутствия']}}</p>
+      </td>
+
+    </tr>  <tr>
+             <td style="width: 13.240740740740744%; text-align: center;">
+          <p> Саянская улица, дом 3А</p>
+        </td>
+        <td style="width: 7.583333333333334%; text-align: center;">
+          <p>{{stat['Саянская улица, дом 3А']['всего учеников']}}</p>
+        </td>
+        <td style="width: 13.240740740740744%; text-align: center;">
+          <p>{{stat['Саянская улица, дом 3А']['решение родителей']}}</p>
+        </td>
+        <td style="width: 8.351851851851851%; text-align: center;">
+          <p>{{stat['Саянская улица, дом 3А']['ОРВИ']}}</p>
+        </td>
+        <td style="width: 8.5%; text-align: center;">
+          <p> {{stat['Саянская улица, дом 3А']['грипп']}}</p>
+        </td>
+        <td style="width: 13.981481481481481%; text-align: center;">
+          <p>{{stat['Саянская улица, дом 3А']['другое заболевание']}}</p>
+        </td>
+        <td style="width: 14.87037037037037%; text-align: center;">
+          <p>{{stat['Саянская улица, дом 3А']['травма в школе']}}</p>
+        </td>
+        <td style="width: 15.314814814814817%; text-align: center;">
+          <p>{{stat['Саянская улица, дом 3А']['травма вне школы']}}</p>
+        </td>
+        <td style="width: 10.101851851851851%; text-align: center;">
+          <p>{{stat['Саянская улица, дом 3А']['причина неизвестна']}}</p>
+        </td>
+        <td style="width: 10.101851851851851%; text-align: center;">
+          <p>{{stat['Саянская улица, дом 3А']['дистанционно']}}</p>
+        </td>
+        <td style="width: 7.583333333333334%; text-align: center;">
+          <p>{{stat['Саянская улица, дом 3А']['присутствующие']}}</p>
+        </td>
+        <td style="width: 7.583333333333334%; text-align: center;">
+          <p>{{stat['Саянская улица, дом 3А']['итог по зданию']}}  </p>
+        </td>
+        <td style="width: 7.583333333333334%; text-align: center;">
+          <p>{{stat['Саянская улица, дом 3А']['процент отсутствия']}}</p>
+        </td>
+
+      </tr>  <tr>
+               <td style="width: 13.240740740740744%; text-align: center;">
+            <p> Шоссе Энтузиастов, дом 96Г</p>
+          </td>
+          <td style="width: 7.583333333333334%; text-align: center;">
+            <p>{{stat['Шоссе Энтузиастов, дом 96Г']['всего учеников']}}</p>
+          </td>
+          <td style="width: 13.240740740740744%; text-align: center;">
+            <p>{{stat['Шоссе Энтузиастов, дом 96Г']['решение родителей']}}</p>
+          </td>
+          <td style="width: 8.351851851851851%; text-align: center;">
+            <p>{{stat['Шоссе Энтузиастов, дом 96Г']['ОРВИ']}}</p>
+          </td>
+          <td style="width: 8.5%; text-align: center;">
+            <p> {{stat['Шоссе Энтузиастов, дом 96Г']['грипп']}}</p>
+          </td>
+          <td style="width: 13.981481481481481%; text-align: center;">
+            <p>{{stat['Шоссе Энтузиастов, дом 96Г']['другое заболевание']}}</p>
+          </td>
+          <td style="width: 14.87037037037037%; text-align: center;">
+            <p>{{stat['Шоссе Энтузиастов, дом 96Г']['травма в школе']}}</p>
+          </td>
+          <td style="width: 15.314814814814817%; text-align: center;">
+            <p>{{stat['Шоссе Энтузиастов, дом 96Г']['травма вне школы']}}</p>
+          </td>
+          <td style="width: 10.101851851851851%; text-align: center;">
+            <p>{{stat['Шоссе Энтузиастов, дом 96Г']['причина неизвестна']}}</p>
+          </td>
+          <td style="width: 10.101851851851851%; text-align: center;">
+            <p>{{stat['Шоссе Энтузиастов, дом 96Г']['дистанционно']}}</p>
+          </td>
+          <td style="width: 7.583333333333334%; text-align: center;">
+            <p>{{stat['Шоссе Энтузиастов, дом 96Г']['присутствующие']}}</p>
+          </td>
+          <td style="width: 7.583333333333334%; text-align: center;">
+            <p>{{stat['Шоссе Энтузиастов, дом 96Г']['итог по зданию']}}  </p>
+          </td>
+          <td style="width: 7.583333333333334%; text-align: center;">
+            <p>{{stat['Шоссе Энтузиастов, дом 96Г']['процент отсутствия']}}</p>
+          </td>
+
+        </tr>  <tr>
+                 <td style="width: 13.240740740740744%; text-align: center;">
+              <p> Шоссе Энтузиастов, дом 94А</p>
+            </td>
+            <td style="width: 7.583333333333334%; text-align: center;">
+              <p>{{stat['Шоссе Энтузиастов, дом 94А']['всего учеников']}}</p>
+            </td>
+            <td style="width: 13.240740740740744%; text-align: center;">
+              <p>{{stat['Шоссе Энтузиастов, дом 94А']['решение родителей']}}</p>
+            </td>
+            <td style="width: 8.351851851851851%; text-align: center;">
+              <p>{{stat['Шоссе Энтузиастов, дом 94А']['ОРВИ']}}</p>
+            </td>
+            <td style="width: 8.5%; text-align: center;">
+              <p> {{stat['Шоссе Энтузиастов, дом 94А']['грипп']}}</p>
+            </td>
+            <td style="width: 13.981481481481481%; text-align: center;">
+              <p>{{stat['Шоссе Энтузиастов, дом 94А']['другое заболевание']}}</p>
+            </td>
+            <td style="width: 14.87037037037037%; text-align: center;">
+              <p>{{stat['Шоссе Энтузиастов, дом 94А']['травма в школе']}}</p>
+            </td>
+            <td style="width: 15.314814814814817%; text-align: center;">
+              <p>{{stat['Шоссе Энтузиастов, дом 94А']['травма вне школы']}}</p>
+            </td>
+            <td style="width: 10.101851851851851%; text-align: center;">
+              <p>{{stat['Шоссе Энтузиастов, дом 94А']['причина неизвестна']}}</p>
+            </td>
+            <td style="width: 10.101851851851851%; text-align: center;">
+              <p>{{stat['Шоссе Энтузиастов, дом 94А']['дистанционно']}}</p>
+            </td>
+            <td style="width: 7.583333333333334%; text-align: center;">
+              <p>{{stat['Шоссе Энтузиастов, дом 94А']['присутствующие']}}</p>
+            </td>
+            <td style="width: 7.583333333333334%; text-align: center;">
+              <p>{{stat['Шоссе Энтузиастов, дом 94А']['итог по зданию']}}  </p>
+            </td>
+            <td style="width: 7.583333333333334%; text-align: center;">
+              <p>{{stat['Шоссе Энтузиастов, дом 94А']['процент отсутствия']}}</p>
+            </td>
+
+          </tr>
+          <tr>
+                 <td style="width: 13.240740740740744%; text-align: center;">
+              <p> Шоссе Энтузиастов, дом 94Б</p>
+            </td>
+            <td style="width: 7.583333333333334%; text-align: center;">
+              <p>{{stat['Шоссе Энтузиастов, дом 94Б']['всего учеников']}}</p>
+            </td>
+            <td style="width: 13.240740740740744%; text-align: center;">
+              <p>{{stat['Шоссе Энтузиастов, дом 94Б']['решение родителей']}}</p>
+            </td>
+            <td style="width: 8.351851851851851%; text-align: center;">
+              <p>{{stat['Шоссе Энтузиастов, дом 94Б']['ОРВИ']}}</p>
+            </td>
+            <td style="width: 8.5%; text-align: center;">
+              <p> {{stat['Шоссе Энтузиастов, дом 94Б']['грипп']}}</p>
+            </td>
+            <td style="width: 13.981481481481481%; text-align: center;">
+              <p>{{stat['Шоссе Энтузиастов, дом 94Б']['другое заболевание']}}</p>
+            </td>
+            <td style="width: 14.87037037037037%; text-align: center;">
+              <p>{{stat['Шоссе Энтузиастов, дом 94Б']['травма в школе']}}</p>
+            </td>
+            <td style="width: 15.314814814814817%; text-align: center;">
+              <p>{{stat['Шоссе Энтузиастов, дом 94Б']['травма вне школы']}}</p>
+            </td>
+            <td style="width: 10.101851851851851%; text-align: center;">
+              <p>{{stat['Шоссе Энтузиастов, дом 94Б']['причина неизвестна']}}</p>
+            </td>
+            <td style="width: 10.101851851851851%; text-align: center;">
+              <p>{{stat['Шоссе Энтузиастов, дом 94Б']['дистанционно']}}</p>
+            </td>
+            <td style="width: 7.583333333333334%; text-align: center;">
+              <p>{{stat['Шоссе Энтузиастов, дом 96Б']['присутствующие']}}</p>
+            </td>
+            <td style="width: 7.583333333333334%; text-align: center;">
+              <p>{{stat['Шоссе Энтузиастов, дом 94Б']['итог по зданию']}}  </p>
+            </td>
+            <td style="width: 7.583333333333334%; text-align: center;">
+              <p>{{stat['Шоссе Энтузиастов, дом 96Б']['процент отсутствия']}}</p>
+            </td>
+
+          </tr>  <tr>
+                   <td style="width: 13.240740740740744%; text-align: center;">
+                <p> Шоссе Энтузиастов, дом 96А</p>
+              </td>
+              <td style="width: 7.583333333333334%; text-align: center;">
+                <p>{{stat['Шоссе Энтузиастов, дом 96А']['всего учеников']}}</p>
+              </td>
+              <td style="width: 13.240740740740744%; text-align: center;">
+                <p>{{stat['Шоссе Энтузиастов, дом 96А']['решение родителей']}}</p>
+              </td>
+              <td style="width: 8.351851851851851%; text-align: center;">
+                <p>{{stat['Шоссе Энтузиастов, дом 96А']['ОРВИ']}}</p>
+              </td>
+              <td style="width: 8.5%; text-align: center;">
+                <p> {{stat['Шоссе Энтузиастов, дом 96А']['грипп']}}</p>
+              </td>
+              <td style="width: 13.981481481481481%; text-align: center;">
+                <p>{{stat['Шоссе Энтузиастов, дом 96А']['другое заболевание']}}</p>
+              </td>
+              <td style="width: 14.87037037037037%; text-align: center;">
+                <p>{{stat['Шоссе Энтузиастов, дом 96А']['травма в школе']}}</p>
+              </td>
+              <td style="width: 15.314814814814817%; text-align: center;">
+                <p>{{stat['Шоссе Энтузиастов, дом 96А']['травма вне школы']}}</p>
+              </td>
+              <td style="width: 10.101851851851851%; text-align: center;">
+                <p>{{stat['Шоссе Энтузиастов, дом 96А']['причина неизвестна']}}</p>
+              </td>
+              <td style="width: 10.101851851851851%; text-align: center;">
+                <p>{{stat['Шоссе Энтузиастов, дом 96А']['дистанционно']}}</p>
+              </td>
+              <td style="width: 7.583333333333334%; text-align: center;">
+                <p>{{stat['Шоссе Энтузиастов, дом 96А']['присутствующие']}}</p>
+              </td>
+              <td style="width: 7.583333333333334%; text-align: center;">
+                <p>{{stat['Шоссе Энтузиастов, дом 96А']['итог по зданию']}}  </p>
+              </td>
+              <td style="width: 7.583333333333334%; text-align: center;">
+                <p>{{stat['Шоссе Энтузиастов, дом 96А']['процент отсутствия']}}</p>
+              </td>
+
+            </tr>
+            <tr>
+                     <td style="width: 13.240740740740744%; text-align: center;">
+                  <p> Шоссе Энтузиастов, дом 96Б</p>
+                </td>
+                <td style="width: 7.583333333333334%; text-align: center;">
+                  <p>{{stat['Шоссе Энтузиастов, дом 96Б']['всего учеников']}}</p>
+                </td>
+                <td style="width: 13.240740740740744%; text-align: center;">
+                  <p>{{stat['Шоссе Энтузиастов, дом 96Б']['решение родителей']}}</p>
+                </td>
+                <td style="width: 8.351851851851851%; text-align: center;">
+                  <p>{{stat['Шоссе Энтузиастов, дом 96Б']['ОРВИ']}}</p>
+                </td>
+                <td style="width: 8.5%; text-align: center;">
+                  <p> {{stat['Шоссе Энтузиастов, дом 96Б']['грипп']}}</p>
+                </td>
+                <td style="width: 13.981481481481481%; text-align: center;">
+                  <p>{{stat['Шоссе Энтузиастов, дом 96Б']['другое заболевание']}}</p>
+                </td>
+                <td style="width: 14.87037037037037%; text-align: center;">
+                  <p>{{stat['Шоссе Энтузиастов, дом 96Б']['травма в школе']}}</p>
+                </td>
+                <td style="width: 15.314814814814817%; text-align: center;">
+                  <p>{{stat['Шоссе Энтузиастов, дом 96Б']['травма вне школы']}}</p>
+                </td>
+                <td style="width: 10.101851851851851%; text-align: center;">
+                  <p>{{stat['Шоссе Энтузиастов, дом 96Б']['причина неизвестна']}}</p>
+                </td>
+                <td style="width: 10.101851851851851%; text-align: center;">
+                  <p>{{stat['Шоссе Энтузиастов, дом 96Б']['дистанционно']}}</p>
+                </td>
+                <td style="width: 7.583333333333334%; text-align: center;">
+                  <p>{{stat['Шоссе Энтузиастов, дом 96Б']['присутствующие']}}</p>
+                </td>
+                <td style="width: 7.583333333333334%; text-align: center;">
+                  <p>{{stat['Шоссе Энтузиастов, дом 96Б']['итог по зданию']}}  </p>
+                </td>
+                <td style="width: 7.583333333333334%; text-align: center;">
+                  <p>{{stat['Шоссе Энтузиастов, дом 96Б']['процент отсутствия']}}</p>
+                </td>
+
+              </tr>
+              <tr>
+                     <td style="width: 13.240740740740744%; text-align: center;">
+                  <p>Итог</p>
+                </td>
+                <td style="width: 7.583333333333334%; text-align: center;">
+                  <p>{{stat['все']['всего учеников']}}</p>
+                </td>
+                <td style="width: 13.240740740740744%; text-align: center;">
+                  <p>{{stat['Шоссе Энтузиастов, дом 96Б']['решение родителей'] + stat['Шоссе Энтузиастов, дом 96А']['решение родителей'] + stat['Шоссе Энтузиастов, дом 94Б']['решение родителей'] +
+stat['Шоссе Энтузиастов, дом 94А']['решение родителей'] + stat['Шоссе Энтузиастов, дом 96Г']['решение родителей'] + stat['Саянская улица, дом 3А']['решение родителей'] + stat['Улица Девятая Рота, дом 14 А']['решение родителей']+stat['2-я улица Бухвостова, дом 6']['решение родителей']+stat['Улица Молостовых, дом 10А']['решение родителей']}}</p>
+                </td>
+                <td style="width: 8.351851851851851%; text-align: center;">
+                  <p>{{stat['Шоссе Энтузиастов, дом 96Б']['ОРВИ'] + stat['Шоссе Энтузиастов, дом 96А']['ОРВИ'] + stat['Шоссе Энтузиастов, дом 94Б']['ОРВИ'] +
+stat['Шоссе Энтузиастов, дом 94А']['ОРВИ'] + stat['Шоссе Энтузиастов, дом 96Г']['ОРВИ'] + stat['Саянская улица, дом 3А']['ОРВИ'] + stat['Улица Девятая Рота, дом 14 А']['ОРВИ']+stat['2-я улица Бухвостова, дом 6']['ОРВИ']+stat['Улица Молостовых, дом 10А']['ОРВИ']}}</p>
+                </td>
+                <td style="width: 8.5%; text-align: center;">
+                  <p>{{stat['Шоссе Энтузиастов, дом 96Б']['грипп'] + stat['Шоссе Энтузиастов, дом 96А']['грипп'] + stat['Шоссе Энтузиастов, дом 94Б']['грипп'] +
+stat['Шоссе Энтузиастов, дом 94А']['грипп'] + stat['Шоссе Энтузиастов, дом 96Г']['грипп'] + stat['Саянская улица, дом 3А']['грипп'] + stat['Улица Девятая Рота, дом 14 А']['грипп']+stat['2-я улица Бухвостова, дом 6']['грипп']+stat['Улица Молостовых, дом 10А']['грипп']}}</p>
+                </td>
+                <td style="width: 13.981481481481481%; text-align: center;">
+                  <p>{{stat['Шоссе Энтузиастов, дом 96Б']['другое заболевание'] + stat['Шоссе Энтузиастов, дом 96А']['другое заболевание'] + stat['Шоссе Энтузиастов, дом 94Б']['другое заболевание'] +
+stat['Шоссе Энтузиастов, дом 94А']['другое заболевание'] + stat['Шоссе Энтузиастов, дом 96Г']['другое заболевание'] + stat['Саянская улица, дом 3А']['другое заболевание'] + stat['Улица Девятая Рота, дом 14 А']['другое заболевание']+stat['2-я улица Бухвостова, дом 6']['другое заболевание']+stat['Улица Молостовых, дом 10А']['другое заболевание']}}</p>
+                </td>
+                <td style="width: 14.87037037037037%; text-align: center;">
+                  <p> {{stat['Шоссе Энтузиастов, дом 96Б']['травма в школе'] + stat['Шоссе Энтузиастов, дом 96А']['травма в школе'] + stat['Шоссе Энтузиастов, дом 94Б']['травма в школе'] +
+stat['Шоссе Энтузиастов, дом 94А']['травма в школе'] + stat['Шоссе Энтузиастов, дом 96Г']['травма в школе'] + stat['Саянская улица, дом 3А']['травма в школе'] + stat['Улица Девятая Рота, дом 14 А']['травма в школе']+stat['2-я улица Бухвостова, дом 6']['травма в школе']+stat['Улица Молостовых, дом 10А']['травма в школе']}}</p>
+                </td>
+                <td style="width: 15.314814814814817%; text-align: center;">
+                  <p>{{stat['Шоссе Энтузиастов, дом 96Б']['травма вне школы'] + stat['Шоссе Энтузиастов, дом 96А']['травма вне школы'] + stat['Шоссе Энтузиастов, дом 94Б']['травма вне школы'] +
+stat['Шоссе Энтузиастов, дом 94А']['травма вне школы'] + stat['Шоссе Энтузиастов, дом 96Г']['травма вне школы'] + stat['Саянская улица, дом 3А']['травма вне школы'] + stat['Улица Девятая Рота, дом 14 А']['травма вне школы']+stat['2-я улица Бухвостова, дом 6']['травма вне школы']+stat['Улица Молостовых, дом 10А']['травма вне школы']}}</p>
+                </td>
+                <td style="width: 10.101851851851851%; text-align: center;">
+                  <p>{{stat['Шоссе Энтузиастов, дом 96Б']['причина неизвестна'] + stat['Шоссе Энтузиастов, дом 96А']['причина неизвестна'] + stat['Шоссе Энтузиастов, дом 94Б']['причина неизвестна'] +
+stat['Шоссе Энтузиастов, дом 94А']['причина неизвестна'] + stat['Шоссе Энтузиастов, дом 96Г']['причина неизвестна'] + stat['Саянская улица, дом 3А']['причина неизвестна'] + stat['Улица Девятая Рота, дом 14 А']['причина неизвестна']+stat['2-я улица Бухвостова, дом 6']['причина неизвестна']+stat['Улица Молостовых, дом 10А']['причина неизвестна']}}</p>
+                </td>
+                <td style="width: 10.101851851851851%; text-align: center;">
+                  <p>{{stat['Шоссе Энтузиастов, дом 96Б']['дистанционно'] + stat['Шоссе Энтузиастов, дом 96А']['дистанционно'] + stat['Шоссе Энтузиастов, дом 94Б']['дистанционно'] +
+stat['Шоссе Энтузиастов, дом 94А']['дистанционно'] + stat['Шоссе Энтузиастов, дом 96Г']['дистанционно'] + stat['Саянская улица, дом 3А']['дистанционно'] + stat['Улица Девятая Рота, дом 14 А']['дистанционно']+stat['2-я улица Бухвостова, дом 6']['дистанционно']+stat['Улица Молостовых, дом 10А']['дистанционно']}}</p>
+                </td>
+                <td style="width: 7.583333333333334%; text-align: center;">
+                  <p>{{stat['все']['присутствующие']}}</p>
+                </td>
+                <td style="width: 7.583333333333334%; text-align: center;">
+                  <p>{{stat['все']['итог по зданию']}}</p>
+                </td>
+                <td style="width: 7.583333333333334%; text-align: center;">
+                  <p>{{stat['все']['процент отсутствия']}}</p>
+
+              </tr>
+          <tr>
+</tbody>
+</table>
+</div>
+</ul>
+</li>
+<!-- <div class="container">
+<div class="row">
+<div class="col-md-6 col-md-offset-1">
+
+
+
+<!- <script>
+ $(document).ready(function () {
+ $("#chart").shieldChart({
+ theme: "light",
+ primaryHeader: {
+ text: "График болеющих"
+ },
+ exportOptions: {
+ image: false,
+ print: false
+ },
+ axisX: {
+ categoricalValues: ["2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014"]
+ },
+ tooltipSettings: {
+ chartBound: true,
+ axisMarkers: {
+ enabled: true,
+ mode: 'xy'
+ }
+ },
+ dataSeries: [{
+ seriesType: 'line',
+ collectionAlias: "Дата",
+ data: [100, 320, 453, 234, 553, 665, 345, 123, 432, 545, 654, 345, 332, 456, 234]
+ }]
+ });
+ });
+ </script><!/.График -->
+
+<!-- /.col-md-8 col-md-offset-2 -->
+</div><!-- /.row -->
+</div>
+</div>
+</div><!-- /.container -->
+  <h3 style="text-align: center;"><span style="color: #ff0000;"></span></h3>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</head>
+
+</html>

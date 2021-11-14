@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, minimum-scale=0.7">
+  <link rel="stylesheet" href="/static/adm_teacher_.css">
+
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+
+      <style>
+      .btn{
+        margin-top: 10%;
+      }
+.grid-center{
+  margin-top: 15%;
+}
+      </style>
+
+      <script>
+      $('#Vihod').click(function () {
+  header("Location: home.html");
+});
+      </script>
+      <ul class="list-group col-xs-12 col-lg-10 offset-lg-1">
+        <div id="Vihod">
+        <button type="submit" class="btn btn-warning btn-lg" onclick="window.location.href='/'">Выход</button>
+      </div>
+
+      <div class="grid-center">
+      <li class="list-group-item" id="ramka">
+      <div class="d-flex justify-content-center">
+
+
+        <div class="form-group">
+      <h4>Что вы хотите сделать?</h4><br>
+      {%if view == 1%}
+      <button type="submit" class="btn" id="Tabl" onclick="window.location.href='/table'">Посмотреть таблицу посещаемости</button>
+      <button type="submit" class="btn" id="Tabl" onclick="window.location.href='/prof_table'">Посмотреть отчет выбора направлений</button>
+      {%elif view == 2%}
+      <button type="submit" class="btn" id="Tabl" onclick="window.location.href='/table'">Посмотреть таблицу посещаемости</button>
+      <button type="submit" class="btn" id="Tabl" onclick="window.location.href='/prof_table'">Посмотреть отчет выбора направлений</button>
+      <button type="submit" class="btn" id="Harakt" onclick="window.location.href='/teacher_choice_form'">Оставить характеристику ученикам</button>
+      <button type="submit" class="btn" id="Harakt" onclick="window.location.href='/methdist'">Стараница для методистов</button>
+      {%elif view == 3%}
+      <button type="submit" class="btn" id="Harakt" onclick="window.location.href='/methdist'">Стараница для методистов</button>
+      <button type="submit" class="btn" id="Harakt" onclick="window.location.href='/teacher_choice_form'">Оставить характеристику ученикам</button>
+
+      {%else%}
+      <button type="submit" class="btn" id="Harakt" onclick="window.location.href='/teacher_choice_form'">Оставить характеристику ученикам</button>
+      <button type="submit" class="btn" id="Tabl" onclick="window.location.href='/table'">Посмотреть таблицу посещаемости</button>
+      {%endif%}
+    </div>
+
+
+
+  </div>
+
+</li>
+
+</div>
+</ul>
+
+
+  <h3 style="text-align: center;"><span style="color: #ff0000;"></span></h3>
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</head>
+
+</html>
