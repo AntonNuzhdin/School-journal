@@ -3,6 +3,7 @@ School web application for students and teachers, which will completely get rid 
 Due to the conditions of Covid-19, the application tracks the number of sick students and builds attendance schedules based on this data, recording the reasons for missing classes
 # Languages and tools
 - Python
+- Javascript
 - Flask
 - HTML
 - CSS
@@ -19,3 +20,8 @@ Due to the conditions of Covid-19, the application tracks the number of sick stu
 Grade, comment on student work, mark student visits, and record missed classes.
 Also, teachers can observe statistics of morbidity and absenteeism in school in real time
 
+# Our team
+This project was implemented by the team of three
+- Anton Nuzhdin (Team leader, Python developer and web designer)
+- Arseny Gurevich (Javascript developer)
+- Nikolay Tumanov (Data analyst)
