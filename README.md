@@ -13,7 +13,7 @@ Due to the conditions of Covid-19, the application tracks the number of sick stu
 - Registration of students, teachers and supervisors in the system
 - Different functionality for each of the user classes
 1) Students possibilities:
-  View your grades, comments from teachers, the ability to choose educational courses online
+  View grades and comments from teachers, the ability to choose educational courses online
   
 2) Teacher capabilities:
 Grade, comment on student work, mark student visits, and record missed classes.
